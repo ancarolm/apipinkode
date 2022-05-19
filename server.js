@@ -25,9 +25,6 @@ mongo.connect(
 const app = express();
 app.use(express.json());
 
-/*app.post("/resource", (req, res) => {
-  
-})*/
 app.get("/resources", async (req, res) => {
   
     resources.find().toArray((err, items) => {

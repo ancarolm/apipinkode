@@ -1,5 +1,5 @@
 const express = require("express");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9000;
 const mongo = require("mongodb").MongoClient;
 const url = "mongodb+srv://pinkodedigital:pinkode2020LM@pinkode.mwxkd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
@@ -37,7 +37,7 @@ app.get("/resources", async (req, res) => {
             return;
         }
 
-        res.status(200).json({resources: items});
+        res.status(200).json(items);
     })
 
 
@@ -53,7 +53,7 @@ app.get("/resources/:typeId", async (req, res) => {
             return;
         }
 
-        res.status(200).json({resources: items});
+        res.status(200).json(items);
     })
 
 })

@@ -2,6 +2,7 @@ const express = require("express");
 const port = process.env.PORT || 9000;
 const mongo = require("mongodb").MongoClient;
 const url = "mongodb+srv://pinkodedigital:pinkode2020LM@pinkode.mwxkd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 let db, resources;
 
 mongo.connect(
@@ -22,6 +23,8 @@ mongo.connect(
 )
 
 const app = express();
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 
 app.get("/resources", async (req, res) => {
